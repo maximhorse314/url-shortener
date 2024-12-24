@@ -1,12 +1,18 @@
 # URL Shortener
 
 ## Available scripts
-### Build docker images
+#### Clone the github repo
+```
+git clone https://github.com/maximhorse314/url-shortener
+
+cd url-shortener
+```
+#### Build docker images
 ```
 docker compose build
 ```
 
-### Start containers
+#### Start containers
 ```
 docker compose up
 ```
