@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    depends_on:
+      - database
+    environment:
+      - MONGO_URI=mongodb://tester:password@database:27017/deeporigin?authSource=admin
+
+  database:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: tester
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: deeporigin
+    volumes:
+      - mongo-data:/data/db
+      - ./database/init.js:/docker-entrypoint-initdb.d/init.js:ro
+
+volumes:
+  mongo-data:

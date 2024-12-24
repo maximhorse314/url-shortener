@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                      // Target latest JavaScript (change if needed)
+    "module": "ESNext",                   // Use ESNext for React (needed for import/export)
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Browser and modern JS features
+    "jsx": "react-jsx",                   // Support JSX syntax for React
+    "strict": true,                       // Enable strict type-checking
+    "esModuleInterop": true,              // For compatibility with CommonJS modules
+    "skipLibCheck": true,                 // Skip type-checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in imports
+    "moduleResolution": "Node",          // Resolve modules like Node.js
+    "resolveJsonModule": true,           // Allow importing JSON files
+    "isolatedModules": true,             // Enforce module-level isolation
+    "noEmit": true                        // Prevent emitting compiled files
+  },
+  "include": ["src"],                     // Include the source folder
+  "exclude": ["node_modules", "dist"]    // Exclude node_modules and build folder
+}
